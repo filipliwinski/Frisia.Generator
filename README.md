@@ -44,12 +44,14 @@ file names as arguments:
 
     dotnet .\Frisia.Generator.Demo.dll file1.cs file2.cs
 
+Results are saved in `fileName.cs.json` file.
+
 #### Settings for Demo app
 
 You can modify default settings in `appsettings.json` file.
 
 | Setting | Default | Description |
-| ---- |
+| ------- | ------- | ----------- |
 | LoopIterations | 1 | Number of iterations of loops content (more than 4 is not recommended). |
 | VisitUnsatisfiablePaths | false | If true, Rewritter will folow unsatisfiable paths (used only for testing purposes). |
 | LogFoundBranches | false | If true, found branches are written to console and file log. |
