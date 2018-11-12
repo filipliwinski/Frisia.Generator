@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frisia.Generator", "Frisia.Generator\Frisia.Generator.csproj", "{CDE4EB81-6E8F-42A7-8CAA-2F4FB3E4439A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frisia.Rewriter", "..\..\Frisia.Rewriter\src\Frisia.Rewriter\Frisia.Rewriter.csproj", "{0E853301-3139-44EF-9668-6055F9DFD9DA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frisia.Generator.Demo", "..\Frisia.Generator.Demo\Frisia.Generator.Demo.csproj", "{F88086BD-C0A2-4558-9FAA-99A5BA553AD4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ACF69FBF-3B86-4E72-B973-B7D2FA0DB9A5}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+		..\THIRD-PARTY-NOTICES.md = ..\THIRD-PARTY-NOTICES.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frisia.Solver", "..\..\Frisia.Solver\src\Frisia.Solver\Frisia.Solver.csproj", "{F9CFC777-3DE9-4432-8F29-51584A366894}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDE4EB81-6E8F-42A7-8CAA-2F4FB3E4439A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDE4EB81-6E8F-42A7-8CAA-2F4FB3E4439A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDE4EB81-6E8F-42A7-8CAA-2F4FB3E4439A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDE4EB81-6E8F-42A7-8CAA-2F4FB3E4439A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E853301-3139-44EF-9668-6055F9DFD9DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E853301-3139-44EF-9668-6055F9DFD9DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E853301-3139-44EF-9668-6055F9DFD9DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E853301-3139-44EF-9668-6055F9DFD9DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F88086BD-C0A2-4558-9FAA-99A5BA553AD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F88086BD-C0A2-4558-9FAA-99A5BA553AD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F88086BD-C0A2-4558-9FAA-99A5BA553AD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F88086BD-C0A2-4558-9FAA-99A5BA553AD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9CFC777-3DE9-4432-8F29-51584A366894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9CFC777-3DE9-4432-8F29-51584A366894}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9CFC777-3DE9-4432-8F29-51584A366894}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9CFC777-3DE9-4432-8F29-51584A366894}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {58CF45A1-DBE5-4468-A346-0B6C06361DE7}
+	EndGlobalSection
+EndGlobal
