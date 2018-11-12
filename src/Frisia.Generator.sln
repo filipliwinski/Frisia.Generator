@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frisia.Generator", "Frisia.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frisia.Rewriter", "..\..\Frisia.Rewriter\src\Frisia.Rewriter\Frisia.Rewriter.csproj", "{0E853301-3139-44EF-9668-6055F9DFD9DA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frisia.Generator.Demo", "..\Frisia.Generator.Demo\Frisia.Generator.Demo.csproj", "{F88086BD-C0A2-4558-9FAA-99A5BA553AD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frisia.Generator.Demo", "Frisia.Generator.Demo\Frisia.Generator.Demo.csproj", "{F88086BD-C0A2-4558-9FAA-99A5BA553AD4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ACF69FBF-3B86-4E72-B973-B7D2FA0DB9A5}"
 	ProjectSection(SolutionItems) = preProject
