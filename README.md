@@ -3,7 +3,7 @@ Parameter values generator for parameterized unit tests.
 
 ### Prerequisites
 
-- .NET Core 2.1
+- [NET Core 2.1](https://www.microsoft.com/net/download)
 
 ### Safety warning
 
@@ -45,6 +45,8 @@ file names as arguments:
     dotnet .\Frisia.Generator.Demo.dll file1.cs file2.cs
 
 Results are saved in `fileName.cs.json` file.
+
+[Here](https://github.com/filipliwinski/Frisia.Generator/tree/master/demo/win10-x64.zip) you can download compiled (self-contained) demo app for Windows.
 
 #### Settings for Demo app
 
