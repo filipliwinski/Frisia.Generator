@@ -1,11 +1,11 @@
-# Frisia.Generator
+﻿# Frisia.Generator
 Parameter values generator for parameterized unit tests.
 
 ### Prerequisites
 
 - [NET Core 2.1](https://www.microsoft.com/net/download)
 
-### Safety warning
+### ⚠ Safety warning 
 
 Frisia.Generator uses [Roslyn Scripting API](https://github.com/dotnet/roslyn/wiki/Scripting-API-Samples) 
 to examine provided code samples. In current state it does not use any mocking 
@@ -46,7 +46,7 @@ file names as arguments:
 
 Results are saved in `fileName.cs.json` file.
 
-[Here](https://github.com/filipliwinski/Frisia.Generator/tree/master/demo/win10-x64.zip) you can download compiled (self-contained) demo app for Windows.
+[Here](https://github.com/filipliwinski/Frisia.Generator/raw/master/demo/win10-x64.zip) you can download compiled (self-contained) demo app for Windows.
 
 #### Settings for Demo app
 
@@ -59,6 +59,8 @@ You can modify default settings in `appsettings.json` file.
 | LogFoundBranches | false | If true, found branches are written to console and file log. |
 | WriteRewrittenCodeToFile | false | If true, code rewritten with Frisia.Rewriter is saved to file. |
 
+#### Limitations
 
+Will be updated...
 
 
