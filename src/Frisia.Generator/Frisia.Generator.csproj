@@ -11,7 +11,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Frisia.Rewriter\src\Frisia.Rewriter\Frisia.Rewriter.csproj" />
-    <ProjectReference Include="..\..\..\Frisia.Solver\src\Frisia.Solver\Frisia.Solver.csproj" />
   </ItemGroup>
 
 </Project>

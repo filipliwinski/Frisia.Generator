@@ -39,13 +39,14 @@ namespace Frisia.Generator.Demo
                        .Build();
 
                 var rewriterSection = configuration.GetSection("Rewriter");
-                uint loopIterations = Convert.ToUInt32(rewriterSection.GetSection("LoopIterations").Value);
-                bool visitUnsatisfiablePaths = Convert.ToBoolean(rewriterSection.GetSection("VisitUnsatisfiablePaths").Value);
-                bool logFoundBranches = Convert.ToBoolean(rewriterSection.GetSection("LogFoundBranches").Value);
-                bool writeRewrittenCodeToFile = Convert.ToBoolean(rewriterSection.GetSection("WriteRewrittenCodeToFile").Value);
+                var loopIterations = Convert.ToUInt32(rewriterSection.GetSection("LoopIterations").Value);
+                var visitUnsatisfiablePaths = Convert.ToBoolean(rewriterSection.GetSection("VisitUnsatisfiablePaths").Value);
+                var logFoundBranches = Convert.ToBoolean(rewriterSection.GetSection("LogFoundBranches").Value);
+                var writeRewrittenCodeToFile = Convert.ToBoolean(rewriterSection.GetSection("WriteRewrittenCodeToFile").Value);
+                var timeout = Convert.ToByte(rewriterSection.GetSection("TimeoutInSeconds").Value);
 
                 var solver = new Z3Solver();
-                var generator = new ParamsGenerator(logger, solver, loopIterations, visitUnsatisfiablePaths, logFoundBranches);
+                var generator = new ParamsGenerator(logger, solver, loopIterations, visitUnsatisfiablePaths, logFoundBranches, timeout);
 
                 StartAsync(logger, solver, generator, args, writeRewrittenCodeToFile).Wait();
             }

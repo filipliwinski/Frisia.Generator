@@ -21,14 +21,16 @@ namespace Frisia.Generator
         private readonly uint loopIterations;
         private readonly bool visitUnsatisfiablePaths;
         private readonly bool logFoundBranches;
+        private readonly byte timeout;
 
-        public ParamsGenerator(ILogger logger, ISolver solver, uint loopIterations = 1, bool visitUnsatisfiablePaths = false, bool logFoundBranches = false)
+        public ParamsGenerator(ILogger logger, ISolver solver, uint loopIterations = 1, bool visitUnsatisfiablePaths = false, bool logFoundBranches = false, byte timeout = 5)
         {
             this.logger = logger;
             this.solver = solver;
             this.loopIterations = loopIterations;
             this.visitUnsatisfiablePaths = visitUnsatisfiablePaths;
             this.logFoundBranches = logFoundBranches;
+            this.timeout = timeout;
         }
 
         public async Task<(IEnumerable<Set> sets, SyntaxNode rewrittenNode, TimeSpan elapsed)> ProvideParametersAsync(string cSharpCode)
@@ -45,7 +47,7 @@ namespace Frisia.Generator
 
             foreach (var m in methods)
             {
-                var (sets, rewrittenNode, elapsed) = await ProvideParametersAsync(m, state);
+                var (sets, rewrittenNode, elapsed) = ProvideParameters(m, state);
                 rootNode = rootNode.ReplaceNode(m, rewrittenNode);
 
                 totalSets.AddRange(sets);
@@ -57,7 +59,7 @@ namespace Frisia.Generator
             return (totalSets, rootNode, rewriterTimer.Elapsed);
         }
 
-        public async Task<(IEnumerable<Set> sets, SyntaxNode rewrittenNode, TimeSpan elapsed)> ProvideParametersAsync(MethodDeclarationSyntax method, ScriptState state)
+        public (IEnumerable<Set> sets, SyntaxNode rewrittenNode, TimeSpan elapsed) ProvideParameters(MethodDeclarationSyntax method, ScriptState state)
         {
             var sets = new List<Set>();
             var conditions = new List<ExpressionSyntax>();
@@ -111,8 +113,26 @@ namespace Frisia.Generator
                 var className = (method.Parent as ClassDeclarationSyntax).Identifier.Text;
                 try
                 {
-                    state = await state.ContinueWithAsync($"{className}.{method.Identifier.Text}({p})");
-                    returnValue = state.ReturnValue;
+                    var task = Task.Run(async () =>
+                    {
+                        state = await state.ContinueWithAsync($"{className}.{method.Identifier.Text}({p})");
+                        return state.ReturnValue;
+                    });
+
+                    bool isCompleted = task.Wait(timeout * 1000);
+
+                    if (isCompleted)
+                    {
+                        returnValue = task.Result;
+                    }
+                    else
+                    {
+                        throw new TimeoutException();
+                    }
+                }
+                catch (AggregateException ex)
+                {
+                    returnValue = ex.InnerException.GetType().FullName;
                 }
                 catch (Exception ex)
                 {

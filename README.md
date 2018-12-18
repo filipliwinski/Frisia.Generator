@@ -58,6 +58,7 @@ You can modify default settings in `appsettings.json` file.
 | VisitUnsatisfiablePaths | false | If true, Rewritter will folow unsatisfiable paths (used only for testing purposes). |
 | LogFoundBranches | false | If true, found branches are written to console and file log. |
 | WriteRewrittenCodeToFile | false | If true, code rewritten with Frisia.Rewriter is saved to file. |
+| TimeoutInSeconds | 5 | Timeout value for performing runs with generated parameters. |
 
 #### Limitations
 

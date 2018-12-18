@@ -9,7 +9,7 @@ namespace Frisia.Generator
 {
     public interface IParamsGenerator
     {
-        Task<(IEnumerable<Set> sets, SyntaxNode rewrittenNode, TimeSpan elapsed)> ProvideParametersAsync(MethodDeclarationSyntax method, ScriptState state);
+        (IEnumerable<Set> sets, SyntaxNode rewrittenNode, TimeSpan elapsed) ProvideParameters(MethodDeclarationSyntax method, ScriptState state);
         Task<(IEnumerable<Set> sets, SyntaxNode rewrittenNode, TimeSpan elapsed)> ProvideParametersAsync(string cSharpCode);
     }
 }
