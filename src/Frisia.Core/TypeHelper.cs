@@ -1,8 +1,8 @@
 ﻿using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System;
 
-namespace Frisia.Generator
-{
+namespace Frisia.Core
+{ 
     public static class TypeHelper
     {
         public static object GetDefaultValue(TypeSyntax type)

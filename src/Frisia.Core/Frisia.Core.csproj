@@ -9,9 +9,4 @@
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="2.9.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Frisia.Rewriter\src\Frisia.Rewriter\Frisia.Rewriter.csproj" />
-    <ProjectReference Include="..\Frisia.Core\Frisia.Core.csproj" />
-  </ItemGroup>
-
 </Project>

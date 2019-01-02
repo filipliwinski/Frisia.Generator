@@ -1,4 +1,5 @@
-﻿using Frisia.Rewriter;
+﻿using Frisia.Core;
+using Frisia.Rewriter;
 using Frisia.Solver;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -91,53 +92,7 @@ namespace Frisia.Generator
 
             foreach (var r in results)
             {
-                var p = "";
-                object returnValue = null;
-                for (int i = 0; i < r.Length; i++)
-                {
-                    var parameter = method.ParameterList.Parameters.SingleOrDefault(x => x.Identifier.Text == r[i]);
-                    if (parameter != null)
-                    {
-                        p += TypeHelper.GetDefaultValue(parameter.Type.ToString());
-                    }
-                    else
-                    {
-                        p += r[i];
-                    }
-                    if (i + 1 < r.Length)
-                    {
-                        p += ", ";
-                    }
-                }
-
-                var className = (method.Parent as ClassDeclarationSyntax).Identifier.Text;
-                try
-                {
-                    var task = Task.Run(async () =>
-                    {
-                        state = await state.ContinueWithAsync($"{className}.{method.Identifier.Text}({p})");
-                        return state.ReturnValue;
-                    });
-
-                    bool isCompleted = task.Wait(timeout * 1000);
-
-                    if (isCompleted)
-                    {
-                        returnValue = task.Result;
-                    }
-                    else
-                    {
-                        throw new TimeoutException();
-                    }
-                }
-                catch (AggregateException ex)
-                {
-                    returnValue = ex.InnerException.GetType().FullName;
-                }
-                catch (Exception ex)
-                {
-                    returnValue = ex.GetType().FullName;
-                }
+                var returnValue = Runner.Run(state, method, r, timeout);
 
                 var parameters = new Parameter[r.Length];
 

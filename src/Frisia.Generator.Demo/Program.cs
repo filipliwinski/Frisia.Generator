@@ -62,6 +62,8 @@ namespace Frisia.Generator.Demo
                 }
             }
 
+            LogManager.Flush();
+
             Console.WriteLine("\n\nPress any key to close...");
             Console.ReadKey();
         }
@@ -90,7 +92,7 @@ namespace Frisia.Generator.Demo
                     var filePath = Directory.GetCurrentDirectory() + "\\" + args[i];
                     if (!File.Exists(filePath))
                     {
-                        throw new FileNotFoundException($"File does not exists: {filePath}");
+                        throw new FileNotFoundException($"File does not exist: {filePath}");
                     }
                     paths.Add(filePath);
                 }
