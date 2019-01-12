@@ -73,7 +73,8 @@ namespace Frisia.Generator
                 logger,
                 loopIterations,
                 visitUnsatisfiablePaths,
-                logFoundBranches);
+                logFoundBranches,
+                timeout);
 
             var rewriterTimer = Stopwatch.StartNew();
             var rewrittenNode = (MethodDeclarationSyntax)rewriter.Visit(method);
