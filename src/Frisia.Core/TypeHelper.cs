@@ -14,10 +14,14 @@ namespace Frisia.Core
         {
             switch (typeName)
             {
-                case "int":
-                    return default(int);
                 case "bool":
                     return default(bool);
+                case "int":
+                    return default(int);
+                case "decimal":
+                    return default(decimal);
+                case "double":
+                    return default(double);
                 case "string":
                     return default(string);
                 case "string[]":
@@ -38,10 +42,14 @@ namespace Frisia.Core
             {
                 case "void":
                     return null;
-                case "int":
-                    return typeof(int).FullName;
                 case "bool":
                     return typeof(bool).FullName;
+                case "int":
+                    return typeof(int).FullName;
+                case "decimal":
+                    return typeof(decimal).FullName;
+                case "double":
+                    return typeof(double).FullName;
                 default:
                     throw new NotSupportedException($"{type} is not supported.");
             }
