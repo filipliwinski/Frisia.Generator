@@ -56,6 +56,7 @@ You can modify default settings in `appsettings.json` file.
 | ------- | ------- | ----------- |
 | LoopIterations | 1 | Number of iterations of loops content (more than 4 is not recommended). |
 | VisitUnsatisfiablePaths | false | If true, Rewritter will folow unsatisfiable paths (used only for testing purposes). |
+| VisitTimeoutPaths | false | If true, Rewritter will folow paths regardless of timeout. |
 | LogFoundBranches | false | If true, found branches are written to console and file log. |
 | WriteRewrittenCodeToFile | false | If true, code rewritten with Frisia.Rewriter is saved to file. |
 | TimeoutInSeconds | 5 | Timeout value for performing runs with generated parameters. |

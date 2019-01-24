@@ -21,15 +21,24 @@ namespace Frisia.Generator
         private readonly ISolver solver;
         private readonly uint loopIterations;
         private readonly bool visitUnsatisfiablePaths;
+        private readonly bool visitTimeoutPaths;
         private readonly bool logFoundBranches;
         private readonly byte timeout;
 
-        public ParamsGenerator(ILogger logger, ISolver solver, uint loopIterations = 1, bool visitUnsatisfiablePaths = false, bool logFoundBranches = false, byte timeout = 5)
+        public ParamsGenerator(
+            ILogger logger, 
+            ISolver solver, 
+            uint loopIterations = 1, 
+            bool visitUnsatisfiablePaths = false, 
+            bool visitTimeoutPaths = false, 
+            bool logFoundBranches = false, 
+            byte timeout = 5)
         {
             this.logger = logger;
             this.solver = solver;
             this.loopIterations = loopIterations;
             this.visitUnsatisfiablePaths = visitUnsatisfiablePaths;
+            this.visitTimeoutPaths = visitTimeoutPaths;
             this.logFoundBranches = logFoundBranches;
             this.timeout = timeout;
         }
@@ -73,6 +82,7 @@ namespace Frisia.Generator
                 logger,
                 loopIterations,
                 visitUnsatisfiablePaths,
+                visitTimeoutPaths,
                 logFoundBranches,
                 timeout);
 
