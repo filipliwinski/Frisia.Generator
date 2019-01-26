@@ -27,7 +27,10 @@ namespace Frisia.Generator.Demo
         {
             try
             {
+                Console.WriteLine(Figgle.FiggleFonts.Standard.Render("Frisia Generator"));
                 logger.Info(appName);
+                logger.Info("Filip Liwiński (c) 2019");
+                Console.WriteLine();
 
                 // Setup configuration source
                 var appSettings = "appsettings.json";
