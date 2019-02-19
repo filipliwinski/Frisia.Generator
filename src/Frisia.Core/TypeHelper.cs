@@ -16,8 +16,14 @@ namespace Frisia.Core
             {
                 case "bool":
                     return default(bool);
+                case "byte":
+                    return default(byte);
+                case "short":
+                    return default(short);
                 case "int":
                     return default(int);
+                case "long":
+                    return default(long);
                 case "decimal":
                     return default(decimal);
                 case "double":
@@ -44,8 +50,14 @@ namespace Frisia.Core
                     return null;
                 case "bool":
                     return typeof(bool).FullName;
+                case "byte":
+                    return typeof(byte).FullName;
+                case "short":
+                    return typeof(short).FullName;
                 case "int":
                     return typeof(int).FullName;
+                case "long":
+                    return typeof(long).FullName;
                 case "decimal":
                     return typeof(decimal).FullName;
                 case "double":

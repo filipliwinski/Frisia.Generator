@@ -49,6 +49,8 @@ namespace Frisia.Generator.Demo
                 var writeRewrittenCodeToFile = Convert.ToBoolean(rewriterSection.GetSection("WriteRewrittenCodeToFile").Value);
                 var timeout = Convert.ToByte(rewriterSection.GetSection("TimeoutInSeconds").Value);
 
+                logger.Info($"Loop iterations: {loopIterations}\nTimeout: {timeout}s\n");
+
                 var solver = new Z3Solver();
                 var generator = new ParamsGenerator(logger, solver, loopIterations, visitUnsatisfiablePaths, visitTimeoutPaths, logFoundBranches, timeout);
 

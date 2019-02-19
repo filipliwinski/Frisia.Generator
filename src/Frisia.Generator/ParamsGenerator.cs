@@ -101,6 +101,7 @@ namespace Frisia.Generator
             }
             results.Add(defaults);
 
+            logger.Info("Determining results...");
             foreach (var r in results)
             {
                 var returnValue = Runner.Run(state, method, r, timeout);
